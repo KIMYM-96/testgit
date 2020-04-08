@@ -1,0 +1,21 @@
+# 11-5
+filename = input('입력 파일 이름 : ')
+infile = open(filename, 'r')
+lines = infile.readlines() # 각각의 줄이 리스트 안에 저장
+infile.close()
+
+file = input('출력 파일 이름 : ')
+outfile = open(file, 'w')
+
+total = 0
+avg = 0
+count = 0
+for s in lines:
+    total += float(s)
+    count += 1
+avg = total / count
+
+print('합계='+str(total), file = outfile, end='\n')
+print('평균='+str(avg), file = outfile, end='')
+
+outfile.close()
